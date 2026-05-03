@@ -1,17 +1,27 @@
-# Ultimate.js Empty
+# @ultimate-js/template
 
-An empty Ultimate.js starter template.
+Project template for `ultimate create`. Published to JSR and fetched at project
+creation time.
 
-## Quick Start
+## Contents
 
-```bash
-deno task dev
-```
+| File                               | Purpose                                         |
+| ---------------------------------- | ----------------------------------------------- |
+| `ultimate.config.ts`               | Server/dev/client configuration                 |
+| `deno.json.tmpl`                   | Dependencies and tasks (written as `deno.json`) |
+| `app/layout.tsx`                   | Root layout with dark theme CSS                 |
+| `app/page.tsx`                     | Home page with demo components                  |
+| `app/about/page.tsx`               | About page (routing demo)                       |
+| `app/components/CounterButton.tsx` | Client counter component                        |
+| `app/components/UserCard.tsx`      | Client user-fetcher component                   |
+| `app/functions/counter.ts`         | Server counter state                            |
+| `app/functions/user.ts`            | Server random user data                         |
 
-## Commands
+## How it works
 
-```bash
-deno task dev      # start the development server
-deno task build    # build for production
-deno task preview  # preview the production build
-```
+When a user runs `ultimate create my-app`:
+
+1. CLI fetches this package from JSR (or uses local copy in monorepo)
+2. Copies each file into the new project directory
+3. Generates `ultimate.config.ts` from interactive prompts
+4. Writes `deno.json` with JSR specifiers for standalone use
